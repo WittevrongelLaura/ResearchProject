@@ -1,0 +1,23 @@
+{
+  "name": "researchproject",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev:front": "npm run dev -w pwa",
+    "dev:back": "npm run start:dev -w api",
+    "dev": "run-p dev:front dev:back",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/WittevrongelLaura/ResearchProject.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/WittevrongelLaura/ResearchProject/issues"
+  },
+  "homepage": "https://github.com/WittevrongelLaura/ResearchProject#readme"
+}
