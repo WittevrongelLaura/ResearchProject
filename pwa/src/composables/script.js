@@ -50,7 +50,7 @@ dracoloader.setDecoderPath('./draco/')
 const gltfLoader = new GLTFLoader()
 gltfLoader.setDRACOLoader(dracoloader)
 
-gltfLoader.load('./models/retro_computer/scene.gltf', (gltf) => {
+gltfLoader.load('./models/nissan_skyline_r32_gt-r/scene.gltf', (gltf) => {
   gltf.scene.scale.set(3, 3, 3)
   scene.add(gltf.scene)
 })
@@ -62,12 +62,12 @@ const ambientLight = new AmbientLight('#FFFEFC', 3)
 scene.add(ambientLight)
 
 const directionalLight = new DirectionalLight('#ffffff', 5)
-    directionalLight.position.set(-0.5, 1, 2.25)
-    scene.add(directionalLight)
+directionalLight.position.set(-0.5, 1, 2.25)
+scene.add(directionalLight)
 
-    const directionalLightB = new DirectionalLight('#ffffff', 5)
-    directionalLightB.position.set(0.5, 1, -2.25)
-    scene.add(directionalLightB)
+const directionalLightB = new DirectionalLight('#ffffff', 5)
+directionalLightB.position.set(0.5, 1, -2.25)
+scene.add(directionalLightB)
 
 /**
  * Sizes
@@ -132,7 +132,6 @@ const Animate = () => {
 // window.addEventListener('pointermove', (e) => {onPointerMove(e)});
 Animate()
 
-
 // import * as THREE from 'three';
 // import { RoomEnvironment } from 'three/addons/environments/RoomEnvironment.js';
 // 			import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
@@ -165,7 +164,6 @@ Animate()
 //   1000,
 // )
 // camera.position.set(0, 50, 0)
-
 
 // const environment = new RoomEnvironment()
 // const pmremGenerator = new THREE.PMREMGenerator(renderer)
@@ -209,10 +207,8 @@ Animate()
 // controls.enableZoom = true
 // controls.update()
 
-
 // window.addEventListener('resize', onWindowResize)
 // }
-
 
 // function onWindowResize() {
 
@@ -232,4 +228,3 @@ Animate()
 //   renderer.render( scene, camera );
 
 // }
-

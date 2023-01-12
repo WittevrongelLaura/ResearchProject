@@ -13,10 +13,10 @@ const { title } = Astro.props;
 		<meta name="generator" content={Astro.generator} />
 		<title>{title}</title>
 	</head>
-	<body>
-		<!-- <slot /> -->
-		<canvas class="webgl absolute z-99"></canvas>
-		<script src="../composables/script.js"></script>
+	<body class="bg-neutral-800">
+		<slot />
+		<!-- <canvas class="webgl absolute z-99"></canvas>
+		<script src="../composables/script.js"></script> -->
 		<!-- <Car /> -->
 		<Menu></Menu>
 	</body>
