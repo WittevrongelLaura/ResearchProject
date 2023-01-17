@@ -179,7 +179,7 @@
   const gltfLoader = new GLTFLoader()
   gltfLoader.setDRACOLoader(dracoloader)
 
-  gltfLoader.load('./models/nissan_skyline_r32_gt-r/scene.gltf', (gltf) => {
+  gltfLoader.load('./models/car/car.gltf', (gltf) => {
     gltf.scene.scale.set(3, 3, 3)
     scene.add(gltf.scene)
   })
