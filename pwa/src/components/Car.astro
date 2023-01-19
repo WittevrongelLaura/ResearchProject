@@ -179,22 +179,25 @@
   const gltfLoader = new GLTFLoader()
   gltfLoader.setDRACOLoader(dracoloader)
 
-  gltfLoader.load('./models/car/car.gltf', (gltf) => {
-    gltf.scene.scale.set(3, 3, 3)
+  gltfLoader.load('./models/car/headlights/headlights.gltf', (gltf) => {
+    gltf.scene.scale.set(5, 5, 5)
+    gltf.scene.position.set(0, 4, 0)
     scene.add(gltf.scene)
   })
+
+  // gltfLoader.position.set(0, 0, 0)
 
   /**
    * Lights
    */
-  const ambientLight = new AmbientLight('#FFFEFC', 3)
+  const ambientLight = new AmbientLight('#FFFEFC', 0.5)
   scene.add(ambientLight)
 
-  const directionalLight = new DirectionalLight('#ffffff', 5)
+  const directionalLight = new DirectionalLight('#ffffff', 1)
   directionalLight.position.set(-0.5, 1, 2.25)
   scene.add(directionalLight)
 
-  const directionalLightB = new DirectionalLight('#ffffff', 5)
+  const directionalLightB = new DirectionalLight('#ffffff', 1)
   directionalLightB.position.set(0.5, 1, -2.25)
   scene.add(directionalLightB)
 
@@ -241,7 +244,6 @@
   controls.enableDamping = true
   controls.enableZoom = true
   controls.autoRotate = true
-
 
   /**
    * Renderer

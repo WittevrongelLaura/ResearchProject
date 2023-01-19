@@ -57,7 +57,7 @@
   const gltfLoader = new GLTFLoader()
   gltfLoader.setDRACOLoader(dracoloader)
 
-  gltfLoader.load('./models/parking_garage/scene.gltf', (gltf) => {
+  gltfLoader.load('./models/podium/podium.gltf', (gltf) => {
     gltf.scene.scale.set(5, 5, 5)
     scene.add(gltf.scene)
   })
@@ -65,15 +65,15 @@
   /**
    * Lights
    */
-  const ambientLight = new AmbientLight('#FFFEFC', 1.5)
+  const ambientLight = new AmbientLight('#FFFEFC', 0.5)
   scene.add(ambientLight)
 
-  const directionalLight = new DirectionalLight('#ffffff', 5)
-  directionalLight.position.set(-0.5, 1, 2.25)
+  const directionalLight = new DirectionalLight('#ffffff', 1.25)
+  directionalLight.position.set(-2.25, 1, 2.25)
   scene.add(directionalLight)
 
-  const directionalLightB = new DirectionalLight('#ffffff', 5)
-  directionalLightB.position.set(0.5, 1, -2.25)
+  const directionalLightB = new DirectionalLight('#ffffff', 1.25)
+  directionalLightB.position.set(2.25, 1, -2.25)
   scene.add(directionalLightB)
 
   /**
