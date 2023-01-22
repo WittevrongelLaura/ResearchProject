@@ -1,9 +1,8 @@
 ---
 
-
 ---
 
-<canvas class="showroom absolute z-99"></canvas>
+<canvas class="car absolute z-99"></canvas>
 <script>
   import {
     Scene,
@@ -24,7 +23,7 @@
    */
 
   // Canvas
-  const canvas = document.querySelector('.showroom')
+  const canvas = document.querySelector('.car')
 
   // Scene
   const scene = new Scene()
@@ -57,10 +56,46 @@
   const gltfLoader = new GLTFLoader()
   gltfLoader.setDRACOLoader(dracoloader)
 
+  gltfLoader.load('./models/car/body/body.gltf', (gltf) => {
+    gltf.scene.scale.set(5, 5, 5)
+    gltf.scene.position.set(0, 4, 0)
+    scene.add(gltf.scene)
+  })
+  gltfLoader.load('./models/car/exhaust/exhaust.gltf', (gltf) => {
+    gltf.scene.scale.set(5, 5, 5)
+    gltf.scene.position.set(0, 4, 0)
+    scene.add(gltf.scene)
+  })
+  gltfLoader.load('./models/car/headlights/headlights.gltf', (gltf) => {
+    gltf.scene.scale.set(5, 5, 5)
+    gltf.scene.position.set(0, 4, 0)
+    scene.add(gltf.scene)
+  })
+  gltfLoader.load('./models/car/licenceplate/licenceplate_F.gltf', (gltf) => {
+    gltf.scene.scale.set(5, 5, 5)
+    gltf.scene.position.set(0, 4, 0)
+    scene.add(gltf.scene)
+  })
+  gltfLoader.load('./models/car/licenceplate/licenceplate_B.gltf', (gltf) => {
+    gltf.scene.scale.set(5, 5, 5)
+    gltf.scene.position.set(0, 4, 0)
+    scene.add(gltf.scene)
+  })
+  gltfLoader.load('./models/car/sidemirrors/sidemirrors.gltf', (gltf) => {
+    gltf.scene.scale.set(5, 5, 5)
+    gltf.scene.position.set(0, 4, 0)
+    scene.add(gltf.scene)
+  })
+  gltfLoader.load('./models/car/taillights/taillights.gltf', (gltf) => {
+    gltf.scene.scale.set(5, 5, 5)
+    gltf.scene.position.set(0, 4, 0)
+    scene.add(gltf.scene)
+  })
   gltfLoader.load('./models/podium/podium.gltf', (gltf) => {
     gltf.scene.scale.set(5, 5, 5)
     scene.add(gltf.scene)
   })
+  // gltfLoader.position.set(0, 0, 0)
 
   /**
    * Lights
@@ -68,12 +103,12 @@
   const ambientLight = new AmbientLight('#FFFEFC', 0.5)
   scene.add(ambientLight)
 
-  const directionalLight = new DirectionalLight('#ffffff', 1.25)
-  directionalLight.position.set(-2.25, 1, 2.25)
+  const directionalLight = new DirectionalLight('#ffffff', 1)
+  directionalLight.position.set(-0.5, 1, 2.25)
   scene.add(directionalLight)
 
-  const directionalLightB = new DirectionalLight('#ffffff', 1.25)
-  directionalLightB.position.set(2.25, 1, -2.25)
+  const directionalLightB = new DirectionalLight('#ffffff', 1)
+  directionalLightB.position.set(0.5, 1, -2.25)
   scene.add(directionalLightB)
 
   /**
@@ -119,7 +154,6 @@
   controls.enableDamping = true
   controls.enableZoom = true
   controls.autoRotate = true
-
 
   /**
    * Renderer

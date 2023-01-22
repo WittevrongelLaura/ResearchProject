@@ -62,6 +62,7 @@
     ],
     "materials" : [
         {
+            "alphaMode" : "BLEND",
             "doubleSided" : true,
             "name" : "Wheelhouse.001",
             "pbrMetallicRoughness" : {
@@ -69,7 +70,7 @@
                     0.800000011920929,
                     0.800000011920929,
                     0.800000011920929,
-                    1
+                    0
                 ],
                 "metallicFactor" : 0,
                 "roughnessFactor" : 0.5
