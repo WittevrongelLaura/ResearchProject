@@ -100,7 +100,7 @@
     "materials" : [
         {
             "doubleSided" : true,
-            "name" : "tire",
+            "name" : "Tire_FL",
             "pbrMetallicRoughness" : {
                 "baseColorFactor" : [
                     0,
@@ -114,7 +114,7 @@
         },
         {
             "doubleSided" : true,
-            "name" : "rim",
+            "name" : "Rim_FL",
             "pbrMetallicRoughness" : {
                 "baseColorFactor" : [
                     0.800000011920929,
@@ -128,7 +128,7 @@
         },
         {
             "doubleSided" : true,
-            "name" : "tire.001",
+            "name" : "Tire_BL",
             "pbrMetallicRoughness" : {
                 "baseColorFactor" : [
                     0,
@@ -142,7 +142,7 @@
         },
         {
             "doubleSided" : true,
-            "name" : "rim.001",
+            "name" : "Rim_BL",
             "pbrMetallicRoughness" : {
                 "baseColorFactor" : [
                     0.800000011920929,
@@ -156,7 +156,7 @@
         },
         {
             "doubleSided" : true,
-            "name" : "tire.002",
+            "name" : "Tire_FR",
             "pbrMetallicRoughness" : {
                 "baseColorFactor" : [
                     0,
@@ -170,7 +170,7 @@
         },
         {
             "doubleSided" : true,
-            "name" : "rim.002",
+            "name" : "Rim_FR",
             "pbrMetallicRoughness" : {
                 "baseColorFactor" : [
                     0.800000011920929,
@@ -184,7 +184,7 @@
         },
         {
             "doubleSided" : true,
-            "name" : "tire.003",
+            "name" : "Tire_BR",
             "pbrMetallicRoughness" : {
                 "baseColorFactor" : [
                     0,
@@ -198,7 +198,7 @@
         },
         {
             "doubleSided" : true,
-            "name" : "rim.003",
+            "name" : "Rim_BR",
             "pbrMetallicRoughness" : {
                 "baseColorFactor" : [
                     0.800000011920929,
@@ -213,7 +213,7 @@
     ],
     "meshes" : [
         {
-            "name" : "Cylinder.001",
+            "name" : "Wheel_FL",
             "primitives" : [
                 {
                     "attributes" : {
@@ -236,7 +236,7 @@
             ]
         },
         {
-            "name" : "Cylinder.005",
+            "name" : "Wheel_BL",
             "primitives" : [
                 {
                     "attributes" : {
@@ -259,7 +259,7 @@
             ]
         },
         {
-            "name" : "Cylinder.002",
+            "name" : "Wheel_FR",
             "primitives" : [
                 {
                     "attributes" : {
@@ -282,7 +282,7 @@
             ]
         },
         {
-            "name" : "Cylinder.004",
+            "name" : "Wheel_BR",
             "primitives" : [
                 {
                     "attributes" : {

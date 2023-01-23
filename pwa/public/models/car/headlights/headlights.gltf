@@ -81,7 +81,7 @@
     ],
     "meshes" : [
         {
-            "name" : "Cube.002",
+            "name" : "Headlight_L",
             "primitives" : [
                 {
                     "attributes" : {
@@ -104,7 +104,7 @@
             ]
         },
         {
-            "name" : "Cube.005",
+            "name" : "Headlight_R",
             "primitives" : [
                 {
                     "attributes" : {

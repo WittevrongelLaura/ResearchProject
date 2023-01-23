@@ -87,7 +87,7 @@
     ],
     "meshes" : [
         {
-            "name" : "Cylinder.009",
+            "name" : "Pipe",
             "primitives" : [
                 {
                     "attributes" : {
@@ -110,7 +110,7 @@
             ]
         },
         {
-            "name" : "Cylinder.010",
+            "name" : "Exhaust",
             "primitives" : [
                 {
                     "attributes" : {

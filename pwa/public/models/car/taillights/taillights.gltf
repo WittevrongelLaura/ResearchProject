@@ -81,7 +81,7 @@
     ],
     "meshes" : [
         {
-            "name" : "Cube.010",
+            "name" : "Taillight_R",
             "primitives" : [
                 {
                     "attributes" : {
@@ -104,7 +104,7 @@
             ]
         },
         {
-            "name" : "Cube.013",
+            "name" : "Taillight_L",
             "primitives" : [
                 {
                     "attributes" : {

@@ -15,7 +15,7 @@
     "nodes" : [
         {
             "mesh" : 0,
-            "name" : "Cube",
+            "name" : "Podium",
             "scale" : [
                 1.661134123802185,
                 0.14455480873584747,
@@ -55,7 +55,7 @@
     ],
     "meshes" : [
         {
-            "name" : "Cube.001",
+            "name" : "Podium",
             "primitives" : [
                 {
                     "attributes" : {

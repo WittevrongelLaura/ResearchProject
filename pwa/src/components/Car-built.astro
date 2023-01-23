@@ -18,6 +18,8 @@
   import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader.js'
   import { DRACOLoader } from 'three/examples/jsm/loaders/DRACOLoader.js'
 
+import { log } from 'astro/dist/core/logger/core'
+
   /**
    * Base
    */
@@ -39,14 +41,15 @@
   //   pointer.y = -(e.clientY / window.innerHeight) * 2 + 1;
 
   //   //update the picking ray with the camera and mouse position
-  //   const intersects = raycaster.intersectObjects(scene.children);
+  //   // const intersects = raycaster.intersectObjects(scene.children);
 
-  //   for (let i = 0; i < intersects.length; i++) {
-  //       console.log(intersects[i]);
-  //       intersects[i].object.material.color.set(0x0000ff);
-  //   }
+  //   // for (let i = 0; i < intersects.length; i++) {
+  //   //     console.log(intersects[i]);
+  //   //     intersects[i].object.material.color.set(0x0000ff);
+  //   // }
   // }
 
+  
   /**
    * Models
    */
@@ -56,46 +59,46 @@
   const gltfLoader = new GLTFLoader()
   gltfLoader.setDRACOLoader(dracoloader)
 
-  gltfLoader.load('./models/car/body/body.gltf', (gltf) => {
-    gltf.scene.scale.set(5, 5, 5)
-    gltf.scene.position.set(0, 4, 0)
-    scene.add(gltf.scene)
-  })
-  gltfLoader.load('./models/car/exhaust/exhaust.gltf', (gltf) => {
-    gltf.scene.scale.set(5, 5, 5)
-    gltf.scene.position.set(0, 4, 0)
-    scene.add(gltf.scene)
-  })
-  gltfLoader.load('./models/car/headlights/headlights.gltf', (gltf) => {
-    gltf.scene.scale.set(5, 5, 5)
-    gltf.scene.position.set(0, 4, 0)
-    scene.add(gltf.scene)
-  })
-  gltfLoader.load('./models/car/licenceplate/licenceplate_F.gltf', (gltf) => {
-    gltf.scene.scale.set(5, 5, 5)
-    gltf.scene.position.set(0, 4, 0)
-    scene.add(gltf.scene)
-  })
-  gltfLoader.load('./models/car/licenceplate/licenceplate_B.gltf', (gltf) => {
-    gltf.scene.scale.set(5, 5, 5)
-    gltf.scene.position.set(0, 4, 0)
-    scene.add(gltf.scene)
-  })
-  gltfLoader.load('./models/car/sidemirrors/sidemirrors.gltf', (gltf) => {
-    gltf.scene.scale.set(5, 5, 5)
-    gltf.scene.position.set(0, 4, 0)
-    scene.add(gltf.scene)
-  })
-  gltfLoader.load('./models/car/taillights/taillights.gltf', (gltf) => {
-    gltf.scene.scale.set(5, 5, 5)
-    gltf.scene.position.set(0, 4, 0)
-    scene.add(gltf.scene)
-  })
-  gltfLoader.load('./models/car/wheels/wheels.gltf', (gltf) => {
-    gltf.scene.scale.set(5, 5, 5)
-    gltf.scene.position.set(0, 4, 0)
-    scene.add(gltf.scene)
-  })
+  // gltfLoader.load('./models/car/body/body.gltf', (gltf) => {
+  //   gltf.scene.scale.set(5, 5, 5)
+  //   gltf.scene.position.set(0, 4, 0)
+  //   scene.add(gltf.scene)
+  // })
+  // gltfLoader.load('./models/car/exhaust/exhaust.gltf', (gltf) => {
+  //   gltf.scene.scale.set(5, 5, 5)
+  //   gltf.scene.position.set(0, 4, 0)
+  //   scene.add(gltf.scene)
+  // })
+  // gltfLoader.load('./models/car/headlights/headlights.gltf', (gltf) => {
+  //   gltf.scene.scale.set(5, 5, 5)
+  //   gltf.scene.position.set(0, 4, 0)
+  //   scene.add(gltf.scene)
+  // })
+  // gltfLoader.load('./models/car/licenseplate/licenseplate_F.gltf', (gltf) => {
+  //   gltf.scene.scale.set(5, 5, 5)
+  //   gltf.scene.position.set(0, 4, 0)
+  //   scene.add(gltf.scene)
+  // })
+  // gltfLoader.load('./models/car/licenseplate/licenseplate_B.gltf', (gltf) => {
+  //   gltf.scene.scale.set(5, 5, 5)
+  //   gltf.scene.position.set(0, 4, 0)
+  //   scene.add(gltf.scene)
+  // })
+  // gltfLoader.load('./models/car/sidemirrors/sidemirrors.gltf', (gltf) => {
+  //   gltf.scene.scale.set(5, 5, 5)
+  //   gltf.scene.position.set(0, 4, 0)
+  //   scene.add(gltf.scene)
+  // })
+  // gltfLoader.load('./models/car/taillights/taillights.gltf', (gltf) => {
+  //   gltf.scene.scale.set(5, 5, 5)
+  //   gltf.scene.position.set(0, 4, 0)
+  //   scene.add(gltf.scene)
+  // })
+  // gltfLoader.load('./models/car/wheels/wheels.gltf', (gltf) => {
+  //   gltf.scene.scale.set(5, 5, 5)
+  //   gltf.scene.position.set(0, 4, 0)
+  //   scene.add(gltf.scene)
+  // })
   gltfLoader.load('./models/podium/podium.gltf', (gltf) => {
     gltf.scene.scale.set(5, 5, 5)
     scene.add(gltf.scene)
@@ -124,19 +127,19 @@
     height: window.innerHeight,
   }
 
-  // window.addEventListener('resize', () => {
-  //   // Update sizes
-  //   sizes.width = window.innerWidth;
-  //   sizes.height = window.innerHeight;
+  window.addEventListener('resize', () => {
+    // Update sizes
+    sizes.width = window.innerWidth;
+    sizes.height = window.innerHeight;
 
-  //   // Update camera
-  //   camera.aspect = sizes.width / sizes.height;
-  //   camera.updateProjectionMatrix();
+    // Update camera
+    camera.aspect = sizes.width / sizes.height;
+    camera.updateProjectionMatrix();
 
-  //   // Update renderer
-  //   renderer.setSize(sizes.width, sizes.height);
-  //   renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
-  // });
+    // Update renderer
+    renderer.setSize(sizes.width, sizes.height);
+    renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+  });
 
   /**
    * Camera
@@ -155,10 +158,10 @@
   // Controls
   const controls = new OrbitControls(camera, canvas)
   controls.target.set(0, 0, 0)
-  controls.rotateSpeed = 2
+  // controls.rotateSpeed = 2
   controls.enableDamping = true
   controls.enableZoom = true
-  controls.autoRotate = true
+  // controls.autoRotate = true
 
   /**
    * Renderer
@@ -169,6 +172,27 @@
   renderer.shadowMap.type = PCFSoftShadowMap
   renderer.setSize(sizes.width, sizes.height)
   renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2))
+
+
+  renderer.domElement.addEventListener('click', onclick, false);
+
+  function onclick(event) {
+    event.preventDefault();
+    console.log('click');
+    // calculate mouse position in normalized device coordinates
+    // (-1 to +1) for both components
+    pointer.x = (event.clientX / window.innerWidth) * 2 - 1;
+    pointer.y = -(event.clientY / window.innerHeight) * 2 + 1;
+    // update the picking ray with the camera and mouse position
+    raycaster.setFromCamera(pointer, camera);
+    // // calculate objects intersecting the picking ray
+    const intersects = raycaster.intersectObjects(scene.children, true);
+    console.log(intersects);
+    console.log(intersects[0].object.material.name);
+    for (let i = 0; i < intersects.length; i++) {
+      intersects[i].object.material.color.set(0x0000ff);
+    }
+  }
 
   const Animate = () => {
     controls.update() //raycaster

@@ -46,7 +46,7 @@
     ],
     "meshes" : [
         {
-            "name" : "Cube.015",
+            "name" : "Licenseplate_B",
             "primitives" : [
                 {
                     "attributes" : {
@@ -125,7 +125,7 @@
     "buffers" : [
         {
             "byteLength" : 1144,
-            "uri" : "licenceplate_B.bin"
+            "uri" : "licenseplate_B.bin"
         }
     ]
 }
