@@ -1,5 +1,4 @@
 ---
-
 ---
 
 <canvas class="car absolute z-99"></canvas>
@@ -17,8 +16,6 @@
   import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls.js'
   import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader.js'
   import { DRACOLoader } from 'three/examples/jsm/loaders/DRACOLoader.js'
-
-import { log } from 'astro/dist/core/logger/core'
 
   /**
    * Base
@@ -49,7 +46,6 @@ import { log } from 'astro/dist/core/logger/core'
   //   // }
   // }
 
-  
   /**
    * Models
    */
@@ -134,17 +130,17 @@ import { log } from 'astro/dist/core/logger/core'
 
   window.addEventListener('resize', () => {
     // Update sizes
-    sizes.width = window.innerWidth;
-    sizes.height = window.innerHeight;
+    sizes.width = window.innerWidth
+    sizes.height = window.innerHeight
 
     // Update camera
-    camera.aspect = sizes.width / sizes.height;
-    camera.updateProjectionMatrix();
+    camera.aspect = sizes.width / sizes.height
+    camera.updateProjectionMatrix()
 
     // Update renderer
-    renderer.setSize(sizes.width, sizes.height);
-    renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
-  });
+    renderer.setSize(sizes.width, sizes.height)
+    renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2))
+  })
 
   /**
    * Camera
@@ -156,7 +152,7 @@ import { log } from 'astro/dist/core/logger/core'
     0.1,
     1000,
   )
-  camera.position.set(1.75, 8, 40)
+  camera.position.set(12, 16, -16)
   camera.rotation.set(0.31, 0.85, -0.23)
   scene.add(camera)
 
@@ -178,22 +174,21 @@ import { log } from 'astro/dist/core/logger/core'
   renderer.setSize(sizes.width, sizes.height)
   renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2))
 
-
-  renderer.domElement.addEventListener('click', onclick, false);
+  renderer.domElement.addEventListener('click', onclick, false)
 
   function onclick(event) {
-    event.preventDefault();
-    console.log('click');
+    event.preventDefault()
+    console.log('click')
     // calculate mouse position in normalized device coordinates
     // (-1 to +1) for both components
-    pointer.x = (event.clientX / window.innerWidth) * 2 - 1;
-    pointer.y = -(event.clientY / window.innerHeight) * 2 + 1;
+    pointer.x = (event.clientX / window.innerWidth) * 2 - 1
+    pointer.y = -(event.clientY / window.innerHeight) * 2 + 1
     // update the picking ray with the camera and mouse position
-    raycaster.setFromCamera(pointer, camera);
+    raycaster.setFromCamera(pointer, camera)
     // // calculate objects intersecting the picking ray
-    const intersects = raycaster.intersectObjects(scene.children, true);
-    console.log(intersects);
-    console.log(intersects[0].object.material.name);
+    const intersects = raycaster.intersectObjects(scene.children, true)
+    console.log(intersects)
+    console.log(intersects[0].object.material.name)
     for (let i = 0; i < intersects.length; i++) {
       // intersects[i].object.material.color.set(0x0000ff);
     }
