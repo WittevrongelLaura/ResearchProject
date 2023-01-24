@@ -59,50 +59,55 @@ import { log } from 'astro/dist/core/logger/core'
   const gltfLoader = new GLTFLoader()
   gltfLoader.setDRACOLoader(dracoloader)
 
-  // gltfLoader.load('./models/car/body/body.gltf', (gltf) => {
-  //   gltf.scene.scale.set(5, 5, 5)
-  //   gltf.scene.position.set(0, 4, 0)
-  //   scene.add(gltf.scene)
-  // })
-  // gltfLoader.load('./models/car/exhaust/exhaust.gltf', (gltf) => {
-  //   gltf.scene.scale.set(5, 5, 5)
-  //   gltf.scene.position.set(0, 4, 0)
-  //   scene.add(gltf.scene)
-  // })
-  // gltfLoader.load('./models/car/headlights/headlights.gltf', (gltf) => {
-  //   gltf.scene.scale.set(5, 5, 5)
-  //   gltf.scene.position.set(0, 4, 0)
-  //   scene.add(gltf.scene)
-  // })
-  // gltfLoader.load('./models/car/licenseplate/licenseplate_F.gltf', (gltf) => {
-  //   gltf.scene.scale.set(5, 5, 5)
-  //   gltf.scene.position.set(0, 4, 0)
-  //   scene.add(gltf.scene)
-  // })
-  // gltfLoader.load('./models/car/licenseplate/licenseplate_B.gltf', (gltf) => {
-  //   gltf.scene.scale.set(5, 5, 5)
-  //   gltf.scene.position.set(0, 4, 0)
-  //   scene.add(gltf.scene)
-  // })
-  // gltfLoader.load('./models/car/sidemirrors/sidemirrors.gltf', (gltf) => {
-  //   gltf.scene.scale.set(5, 5, 5)
-  //   gltf.scene.position.set(0, 4, 0)
-  //   scene.add(gltf.scene)
-  // })
-  // gltfLoader.load('./models/car/taillights/taillights.gltf', (gltf) => {
-  //   gltf.scene.scale.set(5, 5, 5)
-  //   gltf.scene.position.set(0, 4, 0)
-  //   scene.add(gltf.scene)
-  // })
-  // gltfLoader.load('./models/car/wheels/wheels.gltf', (gltf) => {
-  //   gltf.scene.scale.set(5, 5, 5)
-  //   gltf.scene.position.set(0, 4, 0)
-  //   scene.add(gltf.scene)
-  // })
-  gltfLoader.load('./models/podium/podium.gltf', (gltf) => {
+  gltfLoader.load('./models/garage/scene.gltf', (gltf) => {
     gltf.scene.scale.set(5, 5, 5)
+    gltf.scene.position.set(8.5, 0.75, 2)
     scene.add(gltf.scene)
   })
+  gltfLoader.load('./models/car/body/body.gltf', (gltf) => {
+    gltf.scene.scale.set(5, 5, 5)
+    gltf.scene.position.set(0, 4, 0)
+    scene.add(gltf.scene)
+  })
+  gltfLoader.load('./models/car/exhaust/exhaust.gltf', (gltf) => {
+    gltf.scene.scale.set(5, 5, 5)
+    gltf.scene.position.set(0, 4, 0)
+    scene.add(gltf.scene)
+  })
+  gltfLoader.load('./models/car/headlights/headlights.gltf', (gltf) => {
+    gltf.scene.scale.set(5, 5, 5)
+    gltf.scene.position.set(0, 4, 0)
+    scene.add(gltf.scene)
+  })
+  gltfLoader.load('./models/car/licenseplate/licenseplate_F.gltf', (gltf) => {
+    gltf.scene.scale.set(5, 5, 5)
+    gltf.scene.position.set(0, 4, 0)
+    scene.add(gltf.scene)
+  })
+  gltfLoader.load('./models/car/licenseplate/licenseplate_B.gltf', (gltf) => {
+    gltf.scene.scale.set(5, 5, 5)
+    gltf.scene.position.set(0, 4, 0)
+    scene.add(gltf.scene)
+  })
+  gltfLoader.load('./models/car/sidemirrors/sidemirrors.gltf', (gltf) => {
+    gltf.scene.scale.set(5, 5, 5)
+    gltf.scene.position.set(0, 4, 0)
+    scene.add(gltf.scene)
+  })
+  gltfLoader.load('./models/car/taillights/taillights.gltf', (gltf) => {
+    gltf.scene.scale.set(5, 5, 5)
+    gltf.scene.position.set(0, 4, 0)
+    scene.add(gltf.scene)
+  })
+  gltfLoader.load('./models/car/wheels/wheels.gltf', (gltf) => {
+    gltf.scene.scale.set(5, 5, 5)
+    gltf.scene.position.set(0, 4, 0)
+    scene.add(gltf.scene)
+  })
+  // gltfLoader.load('./models/podium/podium.gltf', (gltf) => {
+  //   gltf.scene.scale.set(5, 5, 5)
+  //   scene.add(gltf.scene)
+  // })
   // gltfLoader.position.set(0, 0, 0)
 
   /**
@@ -190,7 +195,7 @@ import { log } from 'astro/dist/core/logger/core'
     console.log(intersects);
     console.log(intersects[0].object.material.name);
     for (let i = 0; i < intersects.length; i++) {
-      intersects[i].object.material.color.set(0x0000ff);
+      // intersects[i].object.material.color.set(0x0000ff);
     }
   }
 
