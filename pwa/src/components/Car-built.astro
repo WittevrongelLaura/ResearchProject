@@ -1,7 +1,7 @@
 ---
 ---
 
-<canvas class="car absolute z-99"></canvas>
+<canvas class="car absolute z-40"></canvas>
 <script>
   import {
     Scene,
@@ -189,9 +189,13 @@
     const intersects = raycaster.intersectObjects(scene.children, true)
     console.log(intersects)
     console.log(intersects[0].object.material.name)
-    for (let i = 0; i < intersects.length; i++) {
+    // for (let i = 0; i < intersects.length; i++) {
       // intersects[i].object.material.color.set(0x0000ff);
-    }
+      if(intersects.length > 0){
+        if(intersects[0].object.material.name === "Body") console.log("body clicked");
+      }
+      
+    // }
   }
 
   const Animate = () => {
