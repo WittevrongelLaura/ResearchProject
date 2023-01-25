@@ -1,0 +1,204 @@
+---
+
+---
+
+<canvas class="car absolute z-40 w-screen h-screen"></canvas>
+<script>
+  import {
+    Scene,
+    PerspectiveCamera,
+    WebGLRenderer,
+    Vector2,
+    Raycaster,
+    AmbientLight,
+    PCFSoftShadowMap,
+    DirectionalLight,
+  } from 'three'
+  import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls.js'
+  import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader.js'
+  import { DRACOLoader } from 'three/examples/jsm/loaders/DRACOLoader.js'
+
+  /**
+   * Base
+   */
+  
+  
+
+  // Canvas
+  const canvas = document.querySelector('.car')
+
+  // Scene
+  const scene = new Scene()
+
+  //Raycast
+  const raycaster = new Raycaster()
+  const pointer = new Vector2()
+
+  /**
+   * Models
+   */
+  const dracoloader = new DRACOLoader()
+  dracoloader.setDecoderPath('./draco/')
+
+  const gltfLoader = new GLTFLoader()
+  gltfLoader.setDRACOLoader(dracoloader)
+
+  gltfLoader.load('./models/garage/scene.gltf', (gltf) => {
+    gltf.scene.scale.set(5, 5, 5)
+    gltf.scene.position.set(8.5, 0.75, 2)
+    scene.add(gltf.scene)
+  })
+  gltfLoader.load('./models/car/body/body_blue.gltf', (gltf) => {
+    gltf.scene.scale.set(5, 5, 5)
+    gltf.scene.position.set(0, 4, 0)
+    scene.add(gltf.scene)
+  })
+  gltfLoader.load('./models/car/exhaust/exhaust.gltf', (gltf) => {
+    gltf.scene.scale.set(5, 5, 5)
+    gltf.scene.position.set(0, 4, 0)
+    scene.add(gltf.scene)
+  })
+  gltfLoader.load('./models/car/headlights/headlights.gltf', (gltf) => {
+    gltf.scene.scale.set(5, 5, 5)
+    gltf.scene.position.set(0, 4, 0)
+    scene.add(gltf.scene)
+  })
+  gltfLoader.load('./models/car/licenseplate/licenseplate_F.gltf', (gltf) => {
+    gltf.scene.scale.set(5, 5, 5)
+    gltf.scene.position.set(0, 4, 0)
+    scene.add(gltf.scene)
+  })
+  gltfLoader.load('./models/car/licenseplate/licenseplate_B.gltf', (gltf) => {
+    gltf.scene.scale.set(5, 5, 5)
+    gltf.scene.position.set(0, 4, 0)
+    scene.add(gltf.scene)
+  })
+  gltfLoader.load('./models/car/sidemirrors/sidemirrors.gltf', (gltf) => {
+    gltf.scene.scale.set(5, 5, 5)
+    gltf.scene.position.set(0, 4, 0)
+    scene.add(gltf.scene)
+  })
+  gltfLoader.load('./models/car/taillights/taillights.gltf', (gltf) => {
+    gltf.scene.scale.set(5, 5, 5)
+    gltf.scene.position.set(0, 4, 0)
+    scene.add(gltf.scene)
+  })
+  gltfLoader.load('./models/car/wheels/wheels.gltf', (gltf) => {
+    gltf.scene.scale.set(5, 5, 5)
+    gltf.scene.position.set(0, 4, 0)
+    scene.add(gltf.scene)
+  })
+  // gltfLoader.load('./models/podium/podium.gltf', (gltf) => {
+  //   gltf.scene.scale.set(5, 5, 5)
+  //   scene.add(gltf.scene)
+  // })
+  // gltfLoader.position.set(0, 0, 0)
+
+  /**
+   * Lights
+   */
+  const ambientLight = new AmbientLight('#FFFEFC', 0.1)
+  scene.add(ambientLight)
+
+  const directionalLight = new DirectionalLight('#ffffff', 1)
+  directionalLight.position.set(-0.5, 1, 2.25)
+  scene.add(directionalLight)
+
+  const directionalLightB = new DirectionalLight('#ffffff', 1)
+  directionalLightB.position.set(0.5, 1, -2.25)
+  scene.add(directionalLightB)
+
+  /**
+   * Sizes
+   */
+  const sizes = {
+    width: window.innerWidth,
+    height: window.innerHeight,
+  }
+
+  window.addEventListener('resize', () => {
+    // Update sizes
+    sizes.width = window.innerWidth
+    sizes.height = window.innerHeight
+
+    // Update camera
+    camera.aspect = sizes.width / sizes.height
+    camera.updateProjectionMatrix()
+
+    // Update renderer
+    renderer.setSize(sizes.width, sizes.height)
+    renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2))
+  })
+
+  /**
+   * Camera
+   */
+  // Base camera
+  const camera = new PerspectiveCamera(
+    75,
+    sizes.width / sizes.height,
+    0.1,
+    1000,
+  )
+  camera.position.set(12, 16, -16)
+  camera.rotation.set(0.31, 0.85, -0.23)
+  scene.add(camera)
+
+  // Controls
+  const controls = new OrbitControls(camera, canvas)
+  controls.target.set(0, 0, 0)
+  // controls.rotateSpeed = 2
+  controls.enableDamping = true
+  controls.enableZoom = true
+  // controls.autoRotate = true
+
+  /**
+   * Renderer
+   */
+
+  const renderer = new WebGLRenderer({ canvas: canvas, alpha: true })
+  renderer.shadowMap.enabled = true
+  renderer.shadowMap.type = PCFSoftShadowMap
+  renderer.setSize(sizes.width, sizes.height)
+  renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2))
+
+  renderer.domElement.addEventListener('click', onclick, false)
+
+  function onclick(event) {
+    event.preventDefault()
+    console.log('click')
+    // calculate mouse position in normalized device coordinates
+    // (-1 to +1) for both components
+    pointer.x = (event.clientX / window.innerWidth) * 2 - 1
+    pointer.y = -(event.clientY / window.innerHeight) * 2 + 1
+    // update the picking ray with the camera and mouse position
+    raycaster.setFromCamera(pointer, camera)
+    // // calculate objects intersecting the picking ray
+    const intersects = raycaster.intersectObjects(scene.children, true)
+    console.log(intersects)
+    console.log(intersects[0].object.material.name)
+    // for (let i = 0; i < intersects.length; i++) {
+      // intersects[i].object.material.color.set(0x0000ff);
+      if(intersects.length > 0){
+        if(intersects[0].object.material.name === "Body"){
+          console.log("body clicked");
+          
+          
+        }
+      }
+      
+    // }
+  }
+
+  const Animate = () => {
+    controls.update() //raycaster
+    raycaster.setFromCamera(pointer, camera)
+
+    renderer.render(scene, camera)
+
+    // Call Animate again on the next frame
+    window.requestAnimationFrame(Animate)
+  }
+
+  Animate()
+</script>
