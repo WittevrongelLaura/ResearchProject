@@ -81,9 +81,9 @@
             "name" : "Body",
             "pbrMetallicRoughness" : {
                 "baseColorFactor" : [
-                    0.042895231395959854,
-                    0.00633114343509078,
                     1,
+                    0.007907332852482796,
+                    0.7483413815498352,
                     1
                 ],
                 "metallicFactor" : 0,
@@ -385,7 +385,7 @@
     "buffers" : [
         {
             "byteLength" : 35592,
-            "uri" : "body_blue.bin"
+            "uri" : "body_pink.bin"
         }
     ]
 }
