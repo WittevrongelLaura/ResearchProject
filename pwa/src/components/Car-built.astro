@@ -1,4 +1,7 @@
 ---
+import Details from '../components/Details'
+
+
 ---
 
 <canvas class="car absolute z-40 w-screen h-screen"></canvas>
@@ -20,6 +23,8 @@
   /**
    * Base
    */
+  
+  
 
   // Canvas
   const canvas = document.querySelector('.car')
@@ -40,51 +45,51 @@
   const gltfLoader = new GLTFLoader()
   gltfLoader.setDRACOLoader(dracoloader)
 
-  // gltfLoader.load('./models/garage/scene.gltf', (gltf) => {
-  //   gltf.scene.scale.set(5, 5, 5)
-  //   gltf.scene.position.set(8.5, 0.75, 2)
-  //   scene.add(gltf.scene)
-  // })
-  // gltfLoader.load('./models/car/body/body.gltf', (gltf) => {
-  //   gltf.scene.scale.set(5, 5, 5)
-  //   gltf.scene.position.set(0, 4, 0)
-  //   scene.add(gltf.scene)
-  // })
-  // gltfLoader.load('./models/car/exhaust/exhaust.gltf', (gltf) => {
-  //   gltf.scene.scale.set(5, 5, 5)
-  //   gltf.scene.position.set(0, 4, 0)
-  //   scene.add(gltf.scene)
-  // })
-  // gltfLoader.load('./models/car/headlights/headlights.gltf', (gltf) => {
-  //   gltf.scene.scale.set(5, 5, 5)
-  //   gltf.scene.position.set(0, 4, 0)
-  //   scene.add(gltf.scene)
-  // })
-  // gltfLoader.load('./models/car/licenseplate/licenseplate_F.gltf', (gltf) => {
-  //   gltf.scene.scale.set(5, 5, 5)
-  //   gltf.scene.position.set(0, 4, 0)
-  //   scene.add(gltf.scene)
-  // })
-  // gltfLoader.load('./models/car/licenseplate/licenseplate_B.gltf', (gltf) => {
-  //   gltf.scene.scale.set(5, 5, 5)
-  //   gltf.scene.position.set(0, 4, 0)
-  //   scene.add(gltf.scene)
-  // })
-  // gltfLoader.load('./models/car/sidemirrors/sidemirrors.gltf', (gltf) => {
-  //   gltf.scene.scale.set(5, 5, 5)
-  //   gltf.scene.position.set(0, 4, 0)
-  //   scene.add(gltf.scene)
-  // })
-  // gltfLoader.load('./models/car/taillights/taillights.gltf', (gltf) => {
-  //   gltf.scene.scale.set(5, 5, 5)
-  //   gltf.scene.position.set(0, 4, 0)
-  //   scene.add(gltf.scene)
-  // })
-  // gltfLoader.load('./models/car/wheels/wheels.gltf', (gltf) => {
-  //   gltf.scene.scale.set(5, 5, 5)
-  //   gltf.scene.position.set(0, 4, 0)
-  //   scene.add(gltf.scene)
-  // })
+  gltfLoader.load('./models/garage/scene.gltf', (gltf) => {
+    gltf.scene.scale.set(5, 5, 5)
+    gltf.scene.position.set(8.5, 0.75, 2)
+    scene.add(gltf.scene)
+  })
+  gltfLoader.load('./models/car/body/body.gltf', (gltf) => {
+    gltf.scene.scale.set(5, 5, 5)
+    gltf.scene.position.set(0, 4, 0)
+    scene.add(gltf.scene)
+  })
+  gltfLoader.load('./models/car/exhaust/exhaust.gltf', (gltf) => {
+    gltf.scene.scale.set(5, 5, 5)
+    gltf.scene.position.set(0, 4, 0)
+    scene.add(gltf.scene)
+  })
+  gltfLoader.load('./models/car/headlights/headlights.gltf', (gltf) => {
+    gltf.scene.scale.set(5, 5, 5)
+    gltf.scene.position.set(0, 4, 0)
+    scene.add(gltf.scene)
+  })
+  gltfLoader.load('./models/car/licenseplate/licenseplate_F.gltf', (gltf) => {
+    gltf.scene.scale.set(5, 5, 5)
+    gltf.scene.position.set(0, 4, 0)
+    scene.add(gltf.scene)
+  })
+  gltfLoader.load('./models/car/licenseplate/licenseplate_B.gltf', (gltf) => {
+    gltf.scene.scale.set(5, 5, 5)
+    gltf.scene.position.set(0, 4, 0)
+    scene.add(gltf.scene)
+  })
+  gltfLoader.load('./models/car/sidemirrors/sidemirrors.gltf', (gltf) => {
+    gltf.scene.scale.set(5, 5, 5)
+    gltf.scene.position.set(0, 4, 0)
+    scene.add(gltf.scene)
+  })
+  gltfLoader.load('./models/car/taillights/taillights.gltf', (gltf) => {
+    gltf.scene.scale.set(5, 5, 5)
+    gltf.scene.position.set(0, 4, 0)
+    scene.add(gltf.scene)
+  })
+  gltfLoader.load('./models/car/wheels/wheels.gltf', (gltf) => {
+    gltf.scene.scale.set(5, 5, 5)
+    gltf.scene.position.set(0, 4, 0)
+    scene.add(gltf.scene)
+  })
   // gltfLoader.load('./models/podium/podium.gltf', (gltf) => {
   //   gltf.scene.scale.set(5, 5, 5)
   //   scene.add(gltf.scene)
@@ -177,7 +182,11 @@
     // for (let i = 0; i < intersects.length; i++) {
       // intersects[i].object.material.color.set(0x0000ff);
       if(intersects.length > 0){
-        if(intersects[0].object.material.name === "Body") console.log("body clicked");
+        if(intersects[0].object.material.name === "Body"){
+          console.log("body clicked");
+          
+          
+        }
       }
       
     // }

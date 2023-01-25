@@ -1,9 +1,17 @@
 ---
+import specifications from "../assets/specifications"
+import {body} from "../components/Car-built"
 
+console.log("bodyyyyy", body);
+
+
+if(body){
+    console.log("CLICKED BODYY")
+}
 ---
 
 <div class=" ">
-    <p>Brand: <span>Lowpoly</span></p>
-    <p>Model: <span>V1</span></p>
-    <p>Year: <span>2023</span></p>
+    <p>Brand: <span>{specifications.body.brand}</span></p>
+    <p>Model: <span>{specifications.body.model}</span></p>
+    <p>Year: <span>{specifications.body.year}</span></p>
 </div>

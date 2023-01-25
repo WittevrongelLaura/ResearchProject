@@ -29,6 +29,10 @@
             "brand": "OEM",
             "type": "LED"
         },
+        "sidemirrors":{
+            "brand": "OEM",
+            "type": "Electric"
+        },
         "licenseplate":{
             "front": "Front licenseplate",
             "back": "Back licenseplate"

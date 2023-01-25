@@ -1,42 +1,7 @@
 ---
 import specifications from "../assets/specifications"
-// import Car from "../interfaces/interface.car"
 
-// export interface Specification {
-//   body: {brand: string, model: string, year: number}
-//   wheels: {tires: {brand: string, model: string, size: string}, rims: {brand: string, model: string, size: string}}
-//   headlights: {brand: string, type: string}
-//   taillights: {brand: string, type: string}
-//   indicators: {brand: string, type: string}
-//   licenseplate: {front: string, back: string}
-//   exhaust: {brand: string, model: string}
-// }
-
-// export interface Props {
-//   car: Car
-// }
-
-// const {car} = Astro.props
-
-// const json = '{ "key": "value", "key2": "value2", "key3": "value3" }';
-// console.log("HALLOOOOOO");
-// const specification = specifications[0]
 console.log(specifications);
-console.log(specifications.body.brand);
-
-
-// try{
-//   const specifications = await fetch(json).then((res) => res.json())
-  
-  
-//   console.log(specifications);
-  
-// }catch(ex){
-//   console.log(ex);
-  
-// }
-
-
 
 
 ---
@@ -45,10 +10,11 @@ console.log(specifications.body.brand);
   <div
     class="w-screen grid grid-cols-2 shadow-md rounded-md bg-neutral-900 p-8 min-w-[200px]"
   >
-    <img class="place-center" src="" alt="mini-model" />
+    <img class="w-28" src="/tumbnails/car-build-mini.png" alt="mini-model" />
     <div class="flex flex-col justify-center">
       <h1 class="text-2xl">{specifications.body.brand}</h1>
       <h2 class="text-xl">{specifications.body.model}</h2>
     </div>
   </div>
+
 </div>
