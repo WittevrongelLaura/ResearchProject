@@ -21,7 +21,6 @@
   },
   "homepage": "https://github.com/WittevrongelLaura/ResearchProject#readme",
   "workspaces": [
-    "api",
     "pwa"
   ]
 }
