@@ -3,6 +3,5 @@
   "compilerOptions": {
     "esModuleInterop": true,
     "resolveJsonModule": true,
-    "jsx": "preserve"
   }
 }
