@@ -1,0 +1,45 @@
+
+    {
+        "body": {
+            "brand": "Lowpoly123",
+            "model": "V1",
+            "year": 2023
+        },        
+        "wheels": {
+            "tires": {
+                "brand": "Michelin",
+                "model": "Pilot Sport 4S",
+                "size": "205/50R16"
+            },
+            "rims":{
+                "brand": "Rays",
+                "model": "Gram Lights 57Trans-X",
+                "size": "16 inch"
+            }
+        },
+        "headlights": {
+            "brand": "OEM",
+            "type": "LED"
+        },
+        "taillights": {
+            "brand": "OEM",
+            "type": "LED"
+        },
+        "indicators":{
+            "brand": "OEM",
+            "type": "LED"
+        },
+        "sidemirrors":{
+            "brand": "OEM",
+            "type": "Electric"
+        },
+        "licenseplate":{
+            "front": "Front licenseplate",
+            "back": "Back licenseplate"
+        },
+        "exhaust": {
+            "brand": "Borla",
+            "model": "S-Type"
+        }
+    }
+   

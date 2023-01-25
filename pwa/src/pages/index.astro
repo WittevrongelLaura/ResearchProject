@@ -1,7 +1,21 @@
 ---
-import MainLayout from "../layouts/MainLayout.astro";
+import Car from '../components/Car.astro'
+import Garage from '../components/Garage.astro'
+import CarBuilt from '../components/Car-built.astro'
+import Showroom from '../components/Showroom.astro'
+import MainLayout from '../layouts/MainLayout.astro'
+import Card from '../components/Card.astro'
 ---
 
 <MainLayout title="Home">
-  <h1 class="text-5xl text-red-600">Index</h1>
+  <div class="flex flex-col">
+    <h1 class="mb-10 text-4xl self-center">Overview</h1>
+    <div class="grid grid-cols-3 gap-10">
+      <Card />
+      <Card />
+      <Card />
+      <Card />
+      <Card />
+    </div>
+  </div>
 </MainLayout>

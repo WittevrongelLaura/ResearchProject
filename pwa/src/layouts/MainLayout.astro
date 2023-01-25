@@ -1,4 +1,6 @@
 ---
+import Car from '../components/Car.astro';
+import Menu from '../components/Menu.astro';
 const { title } = Astro.props;
 ---
 
@@ -11,7 +13,7 @@ const { title } = Astro.props;
 		<meta name="generator" content={Astro.generator} />
 		<title>{title}</title>
 	</head>
-	<body>
+	<body class="bg-neutral-800 text-white overflow-hidden">
 		<slot />
 	</body>
 </html>
