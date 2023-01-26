@@ -18,7 +18,7 @@
   import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls.js'
   import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader.js'
   import { DRACOLoader } from 'three/examples/jsm/loaders/DRACOLoader.js'
-
+  import specifications from "../../assets/specifications.json"
   /**
    * Base
    */
@@ -182,31 +182,80 @@
       // intersects[i].object.material.color.set(0x0000ff);
       if(intersects.length > 0){
         if(intersects[0].object.material.name === "Body"){
-          console.log("body clicked");
-          
-          
+          console.log("BODY");
+          const body = [
+            ["Brand", specifications.body.brand],
+            ["Model", specifications.body.model],
+            ["Year", specifications.body.year]
+          ]
+          console.table(body)
         } else if(intersects[0].object.material.name === "Windows") {
-          console.log("windows clicked");
+          console.log("WINDOWS");
+          const windows = [
+            ["Brand", specifications.windows.brand],
+            ["Type", specifications.windows.type]
+          ]
+          console.table(windows)
         } else if(intersects[0].object.material.name === "Sidemirrors"){
-          console.log("sidemirrors clicked");
+          console.log("SIDEMIRRORS");
+          const sidemirrors = [
+            ["Brand", specifications.sidemirrors.brand],
+            ["Type", specifications.sidemirrors.type]
+          ]
+          console.table(sidemirrors)
         } else if(intersects[0].object.material.name === "Headlights"){
-          console.log("headlights clicked");
+          console.log("HEADLIGHTS");
+          const headlights = [
+            ["Brand", specifications.headlights.brand],
+            ["Type", specifications.headlights.type]
+          ]
+          console.table(headlights)
         } else if(intersects[0].object.material.name === "Taillights"){
-          console.log("taillights clicked");
+          console.log("TAILLIGHTS");
+          const taillights = [
+            ["Brand", specifications.taillights.brand],
+            ["Type", specifications.taillights.type]
+          ]
+          console.table(taillights)
         } else if(intersects[0].object.material.name === "Indicator"){
-          console.log("indicators clicked");
+          console.log("INDICATORS");
+          const indicators = [
+            ["Brand", specifications.indicators.brand],
+            ["Type", specifications.indicators.type]
+          ]
+          console.table(indicators)
         } else if(intersects[0].object.material.name === "Licenseplate" || intersects[0].object.material.name === "Licenseplate.001"){
-          console.log("licenseplate clicked");
+          console.log("LICENSEPLATE");
         } else if(intersects[0].object.material.name === "Wheelhouse_B"){
-          console.log("Wheel clicked");
+          console.log("WHEEL");
+          const tires = [
+            ["Brand", specifications.wheels.tires.brand],
+            ["Model", specifications.wheels.tires.model],
+            ["Size", specifications.wheels.tires.size]
+          ]
+          const rims = [
+            ["Brand", specifications.wheels.rims.brand],
+            ["Model", specifications.wheels.rims.model],
+            ["Size", specifications.wheels.rims.size]
+          ]
+          console.table(tires)
+          console.table(rims)
         } else if(intersects[0].object.material.name === "Sidemirror_L" || intersects[0].object.material.name === "Sidemirror_R"){
-          console.log("Sidemirror clicked");
+          console.log("SIDEMIRROR");
+          const sidemirrors = [
+            ["Brand", specifications.sidemirrors.brand],
+            ["Type", specifications.sidemirrors.type]
+          ]
+          console.table(sidemirrors)
         } else if(intersects[1].object.material.name === "Exhaust"){
-          console.log("Exhaust clicked");
+          console.log("EXHAUST");
+          const exhaust = [
+            ["Brand", specifications.exhaust.brand],
+            ["Model", specifications.exhaust.model],
+          ]
+          console.table(exhaust)
         }
-        
       }
-      
     // }
   }
 

@@ -4,7 +4,11 @@
             "brand": "Lowpoly",
             "model": "V1",
             "year": 2023
-        },        
+        },   
+        "windows": {
+            "brand": "OEM",
+            "type": "Tinted"
+        },   
         "wheels": {
             "tires": {
                 "brand": "Michelin",
