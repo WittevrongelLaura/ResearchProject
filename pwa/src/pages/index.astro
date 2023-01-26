@@ -1,17 +1,21 @@
 ---
 import MainLayout from '../layouts/MainLayout.astro'
-import Card from '../components/Card.astro'
+import CardRed from '../components/cards/Card-red.astro';
+import CardBlue from '../components/cards/Card-blue.astro';
+import CardGreen from '../components/cards/Card-green.astro';
+import CardOrange from '../components/cards/Card-orange.astro';
+import CardPink from '../components/cards/Card-pink.astro';
 ---
 
 <MainLayout title="Home">
   <div class="flex flex-col m-8">
     <h1 class="mb-10 text-4xl self-center">Overview</h1>
     <div class="grid grid-cols-3 gap-10">
-      <Card />
-      <Card />
-      <Card />
-      <Card />
-      <Card />
+      <CardRed />
+      <CardBlue />
+      <CardGreen />
+      <CardOrange />
+      <CardPink />
     </div>
   </div>
 </MainLayout>
