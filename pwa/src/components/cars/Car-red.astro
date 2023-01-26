@@ -167,7 +167,6 @@
 
   function onclick(event) {
     event.preventDefault()
-    console.log('click')
     // calculate mouse position in normalized device coordinates
     // (-1 to +1) for both components
     pointer.x = (event.clientX / window.innerWidth) * 2 - 1
@@ -176,8 +175,8 @@
     raycaster.setFromCamera(pointer, camera)
     // // calculate objects intersecting the picking ray
     const intersects = raycaster.intersectObjects(scene.children, true)
-    console.log(intersects)
-    console.log(intersects[0].object.material.name)
+    // console.log(intersects)
+    // console.log(intersects[0].object.material.name)
     // for (let i = 0; i < intersects.length; i++) {
       // intersects[i].object.material.color.set(0x0000ff);
       if(intersects.length > 0){
@@ -185,7 +184,26 @@
           console.log("body clicked");
           
           
+        } else if(intersects[0].object.material.name === "Windows") {
+          console.log("windows clicked");
+        } else if(intersects[0].object.material.name === "Sidemirrors"){
+          console.log("sidemirrors clicked");
+        } else if(intersects[0].object.material.name === "Headlights"){
+          console.log("headlights clicked");
+        } else if(intersects[0].object.material.name === "Taillights"){
+          console.log("taillights clicked");
+        } else if(intersects[0].object.material.name === "Indicator"){
+          console.log("indicators clicked");
+        } else if(intersects[0].object.material.name === "Licenseplate" || intersects[0].object.material.name === "Licenseplate.001"){
+          console.log("licenseplate clicked");
+        } else if(intersects[0].object.material.name === "Wheelhouse_B"){
+          console.log("Wheel clicked");
+        } else if(intersects[0].object.material.name === "Sidemirror_L" || intersects[0].object.material.name === "Sidemirror_R"){
+          console.log("Sidemirror clicked");
+        } else if(intersects[1].object.material.name === "Exhaust"){
+          console.log("Exhaust clicked");
         }
+        
       }
       
     // }
