@@ -1,8 +1,26 @@
 ---
-
 ---
 
-<canvas class="car absolute z-40 w-screen h-screen"></canvas>
+<canvas class="car absolute z-30 w-screen h-screen"></canvas>
+<div
+  class="absolute z-50 flex flex-col justify-end right-[85px] w-[500px] opacity-75 h-screen"
+>
+  <div class="grid grid-cols-2 mb-4">
+    <div class="rim grid grid-rows-4">
+      <p class="selected font-bold"></p>
+      <p class="first"></p>
+      <p class="second"></p>
+      <p class="third"></p>
+    </div>
+    <div class="tire ml-2 grid grid-rows-4">
+      <p class="selected2 font-bold"></p>
+      <p class="first2"></p>
+      <p class="second2"></p>
+      <p class="third2"></p>
+    </div>
+  </div>
+</div>
+
 <script>
   import {
     Scene,
@@ -17,12 +35,10 @@
   import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls.js'
   import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader.js'
   import { DRACOLoader } from 'three/examples/jsm/loaders/DRACOLoader.js'
-
+  import specifications from '../../assets/specifications.json'
   /**
    * Base
    */
-  
-  
 
   // Canvas
   const canvas = document.querySelector('.car')
@@ -166,28 +182,199 @@
 
   function onclick(event) {
     event.preventDefault()
-    console.log('click')
-    // calculate mouse position in normalized device coordinates
-    // (-1 to +1) for both components
+
     pointer.x = (event.clientX / window.innerWidth) * 2 - 1
     pointer.y = -(event.clientY / window.innerHeight) * 2 + 1
-    // update the picking ray with the camera and mouse position
+
     raycaster.setFromCamera(pointer, camera)
-    // // calculate objects intersecting the picking ray
+
     const intersects = raycaster.intersectObjects(scene.children, true)
-    console.log(intersects)
-    console.log(intersects[0].object.material.name)
-    // for (let i = 0; i < intersects.length; i++) {
-      // intersects[i].object.material.color.set(0x0000ff);
-      if(intersects.length > 0){
-        if(intersects[0].object.material.name === "Body"){
-          console.log("body clicked");
-          
-          
-        }
+
+    if (intersects.length > 0) {
+      if (intersects[0].object.material.name === 'Body') {
+        console.log('BODY')
+        const bodyarr = [
+          ['Brand', specifications.body.brand],
+          ['Model', specifications.body.model],
+          ['Year', specifications.body.year],
+        ]
+        console.table(bodyarr)
+        document.querySelector('.selected').innerHTML = 'Body'
+        document.querySelector('.first').innerHTML =
+          'Brand: ' + specifications.body.brand
+        document.querySelector('.second').innerHTML =
+          'Model: ' + specifications.body.model
+        document.querySelector('.third').innerHTML =
+          'Year: ' + specifications.body.year.toString()
+        document.querySelector('.selected2').innerHTML = ''
+        document.querySelector('.first2').innerHTML = ''
+        document.querySelector('.second2').innerHTML = ''
+        document.querySelector('.third2').innerHTML = ''
+      } else if (intersects[0].object.material.name === 'Windows') {
+        console.log('WINDOWS')
+        const windowsarr = [
+          ['Brand', specifications.windows.brand],
+          ['Type', specifications.windows.type],
+        ]
+        console.table(windowsarr)
+        document.querySelector('.selected').innerHTML = 'Windows'
+        document.querySelector('.first').innerHTML =
+          'Brand:' + specifications.windows.brand
+        document.querySelector('.second').innerHTML =
+          'Type: ' + specifications.windows.type
+        document.querySelector('.third').innerHTML = ''
+        document.querySelector('.selected2').innerHTML = ''
+        document.querySelector('.first2').innerHTML = ''
+        document.querySelector('.second2').innerHTML = ''
+        document.querySelector('.third2').innerHTML = ''
+      } else if (intersects[0].object.material.name === 'Sidemirrors') {
+        console.log('SIDEMIRRORS')
+        const sidemirrors = [
+          ['Brand', specifications.sidemirrors.brand],
+          ['Type', specifications.sidemirrors.type],
+        ]
+        console.table(sidemirrors)
+        document.querySelector('.selected').innerHTML = 'Side Mirrors'
+        document.querySelector('.first').innerHTML =
+          'Brand: ' + specifications.sidemirrors.brand
+        document.querySelector('.second').innerHTML =
+          'Type: ' + specifications.sidemirrors.type
+        document.querySelector('.third').innerHTML = ''
+        document.querySelector('.selected2').innerHTML = ''
+        document.querySelector('.first2').innerHTML = ''
+        document.querySelector('.second2').innerHTML = ''
+        document.querySelector('.third2').innerHTML = ''
+      } else if (intersects[0].object.material.name === 'Headlights') {
+        console.log('HEADLIGHTS')
+        const headlightsarr = [
+          ['Brand', specifications.headlights.brand],
+          ['Type', specifications.headlights.type],
+        ]
+        console.table(headlightsarr)
+        document.querySelector('.selected').innerHTML = 'Headlights'
+        document.querySelector('.first').innerHTML =
+          'Brand: ' + specifications.headlights.brand
+        document.querySelector('.second').innerHTML =
+          'Type: ' + specifications.headlights.type
+        document.querySelector('.third').innerHTML = ''
+        document.querySelector('.selected2').innerHTML = ''
+        document.querySelector('.first2').innerHTML = ''
+        document.querySelector('.second2').innerHTML = ''
+        document.querySelector('.third2').innerHTML = ''
+      } else if (intersects[0].object.material.name === 'Taillights') {
+        console.log('TAILLIGHTS')
+        const taillightsarr = [
+          ['Brand', specifications.taillights.brand],
+          ['Type', specifications.taillights.type],
+        ]
+        console.table(taillightsarr)
+        document.querySelector('.selected').innerHTML = 'Taillights'
+        document.querySelector('.first').innerHTML =
+          'Brand: ' + specifications.taillights.brand
+        document.querySelector('.second').innerHTML =
+          'Type: ' + specifications.taillights.type
+        document.querySelector('.third').innerHTML = ''
+        document.querySelector('.selected2').innerHTML = ''
+        document.querySelector('.first2').innerHTML = ''
+        document.querySelector('.second2').innerHTML = ''
+        document.querySelector('.third2').innerHTML = ''
+      } else if (intersects[0].object.material.name === 'Indicator') {
+        console.log('INDICATORS')
+        const indicatorsarr = [
+          ['Brand', specifications.indicators.brand],
+          ['Type', specifications.indicators.type],
+        ]
+        console.table(indicatorsarr)
+        document.querySelector('.selected').innerHTML = 'Indicators'
+        document.querySelector('.first').innerHTML =
+          'Brand: ' + specifications.indicators.brand
+        document.querySelector('.second').innerHTML =
+          'Type: ' + specifications.indicators.type
+        document.querySelector('.third').innerHTML = ''
+        document.querySelector('.selected2').innerHTML = ''
+        document.querySelector('.first2').innerHTML = ''
+        document.querySelector('.second2').innerHTML = ''
+        document.querySelector('.third2').innerHTML = ''
+      } else if (
+        intersects[0].object.material.name === 'Licenseplate' ||
+        intersects[0].object.material.name === 'Licenseplate.001'
+      ) {
+        console.log('LICENSEPLATE')
+        document.querySelector('.selected').innerHTML = 'License Plate'
+        document.querySelector('.first').innerHTML = ''
+        document.querySelector('.second').innerHTML = ''
+        document.querySelector('.third').innerHTML = ''
+        document.querySelector('.selected2').innerHTML = ''
+        document.querySelector('.first2').innerHTML = ''
+        document.querySelector('.second2').innerHTML = ''
+        document.querySelector('.third2').innerHTML = ''
+      } else if (intersects[0].object.material.name === 'Wheelhouse_B') {
+        console.log('WHEEL')
+        const tiresarr = [
+          ['Brand', specifications.wheels.tires.brand],
+          ['Model', specifications.wheels.tires.model],
+          ['Size', specifications.wheels.tires.size],
+        ]
+        const rimsarr = [
+          ['Brand', specifications.wheels.rims.brand],
+          ['Model', specifications.wheels.rims.model],
+          ['Size', specifications.wheels.rims.size],
+        ]
+        console.table(tiresarr)
+        console.table(rimsarr)
+        document.querySelector('.selected').innerHTML = 'Tires'
+        document.querySelector('.first').innerHTML =
+          'Brand: ' + specifications.wheels.tires.brand
+        document.querySelector('.second').innerHTML =
+          'Model: ' + specifications.wheels.tires.model
+        document.querySelector('.third').innerHTML =
+          'Size: ' + specifications.wheels.tires.size
+        document.querySelector('.selected2').innerHTML = 'Rims'
+        document.querySelector('.first2').innerHTML =
+          'Brand: ' + specifications.wheels.rims.brand
+        document.querySelector('.second2').innerHTML =
+          'Model: ' + specifications.wheels.rims.model
+        document.querySelector('.third2').innerHTML =
+          'Size: ' + specifications.wheels.rims.size
+      } else if (
+        intersects[0].object.material.name === 'Sidemirror_L' ||
+        intersects[0].object.material.name === 'Sidemirror_R'
+      ) {
+        console.log('SIDEMIRROR')
+        const sidemirrorsarr = [
+          ['Brand', specifications.sidemirrors.brand],
+          ['Type', specifications.sidemirrors.type],
+        ]
+        console.table(sidemirrorsarr)
+        document.querySelector('.selected').innerHTML = 'Side Mirrors'
+        document.querySelector('.first').innerHTML =
+          'Brand: ' + specifications.sidemirrors.brand
+        document.querySelector('.second').innerHTML =
+          'Type: ' + specifications.sidemirrors.type
+        document.querySelector('.third').innerHTML = ''
+        document.querySelector('.selected2').innerHTML = ''
+        document.querySelector('.first2').innerHTML = ''
+        document.querySelector('.second2').innerHTML = ''
+        document.querySelector('.third2').innerHTML = ''
+      } else if (intersects[1].object.material.name === 'Exhaust') {
+        console.log('EXHAUST')
+        const exhaustarr = [
+          ['Brand', specifications.exhaust.brand],
+          ['Model', specifications.exhaust.model],
+        ]
+        console.table(exhaustarr)
+        document.querySelector('.selected').innerHTML = 'Exhaust'
+        document.querySelector('.first').innerHTML =
+          'Brand: ' + specifications.exhaust.brand
+        document.querySelector('.second').innerHTML =
+          'Model: ' + specifications.exhaust.model
+        document.querySelector('.third').innerHTML = ''
+        document.querySelector('.selected2').innerHTML = ''
+        document.querySelector('.first2').innerHTML = ''
+        document.querySelector('.second2').innerHTML = ''
+        document.querySelector('.third2').innerHTML = ''
       }
-      
-    // }
+    }
   }
 
   const Animate = () => {
