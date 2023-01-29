@@ -19,5 +19,13 @@
   "bugs": {
     "url": "https://github.com/WittevrongelLaura/ResearchProject/issues"
   },
-  "homepage": "https://github.com/WittevrongelLaura/ResearchProject#readme"
+  "homepage": "https://github.com/WittevrongelLaura/ResearchProject#readme",
+  "workspaces": [
+    "pwa"
+  ],
+  "dependencies": {
+    "@astrojs/vue": "^2.0.0",
+    "astro": "^2.0.1",
+    "vue": "^3.2.45"
+  }
 }

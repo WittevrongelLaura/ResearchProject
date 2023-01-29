@@ -1,7 +1,94 @@
 ---
-import MainLayout from "../layouts/MainLayout.astro";
+import MainLayout from '../layouts/MainLayout.astro'
+import CardRed from '../components/cards/Card-red.astro'
+import CardBlue from '../components/cards/Card-blue.astro'
+import CardGreen from '../components/cards/Card-green.astro'
+import CardYellow from '../components/cards/Card-yellow.astro'
+import CardPink from '../components/cards/Card-pink.astro'
+import CardCoupe from '../components/cards/Card-coupe.astro'
+import CardRacecar from '../components/cards/Card-racecar.astro'
 ---
 
 <MainLayout title="Home">
-  <h1 class="text-5xl text-red-600">Index</h1>
+  <div class="flex flex-col m-8">
+    <h1 class="mb-8 text-4xl self-center font-bold font-title">Laura's car showcase</h1>
+    <h2 class="mb-2 text-2xl self-center">Overview</h2>
+    <select
+      name="sort"
+      id="sort"
+      class="w-fit mb-4 bg-neutral-600 p-4 pr-4 shadow-md rounded-md hover:bg-neutral-500"
+    >
+      <option selected="selected" value="all">All</option>
+      <option value="sedan">Sedan</option>
+      <option value="coupe">Coupe</option>
+      <option value="racecar">Racecar</option>
+    </select>
+    <div class="grid grid-cols-3 gap-9">
+      <div class="sedan"><CardRed /></div>
+      <div class="sedan"><CardBlue /></div>
+      <div class="sedan"><CardGreen /></div>
+      <div class="sedan"><CardYellow /></div>
+      <!-- <div class="sedan"><CardPink /></div> -->
+      <div class="racecar"><CardRacecar /></div>
+      <div class="coupe"><CardCoupe /></div>
+    </div>
+  </div>
 </MainLayout>
+
+<script lang="js">
+  var e = document.getElementById('sort')
+  var sedans = document.querySelectorAll('.sedan')
+  var coupe = document.querySelector('.coupe')
+  var racecar = document.querySelector('.racecar')
+  function onChange() {
+    var value = e.value
+    var text = e.options[e.selectedIndex].text
+    // console.log(value, text)
+    if (value == 'all') {
+      console.log('all selected')
+      for (const sedan of sedans) {
+        sedan.classList.remove('hidden')
+        sedan.classList.add('block')
+      }
+      coupe.classList.remove('hidden')
+      coupe.classList.add('block')
+      racecar.classList.remove('hidden')
+      racecar.classList.add('block')
+
+    } else if (value == 'sedan') {
+      console.log('sedan selected')
+      for (const sedan of sedans) {
+        sedan.classList.remove('hidden')
+        sedan.classList.add('block')
+      }
+      coupe.classList.remove('block')
+      coupe.classList.add('hidden')
+      racecar.classList.remove('block')
+      racecar.classList.add('hidden')
+
+    } else if (value == 'coupe') {
+      console.log('coupe selected')
+      for (const sedan of sedans) {
+        sedan.classList.remove('block')
+        sedan.classList.add('hidden')
+      }
+      coupe.classList.remove('hidden')
+      coupe.classList.add('block')
+      racecar.classList.remove('block')
+      racecar.classList.add('hidden')
+
+    } else if (value == 'racecar') {
+      console.log('racecar selected')
+      for (const sedan of sedans) {
+        sedan.classList.remove('block')
+        sedan.classList.add('hidden')
+      }
+      coupe.classList.remove('block')
+      coupe.classList.add('hidden')
+      racecar.classList.remove('hidden')
+      racecar.classList.add('block')
+    }
+  }
+  e.onchange = onChange
+  onChange()
+</script>
