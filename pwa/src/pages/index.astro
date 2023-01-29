@@ -1,0 +1,70 @@
+---
+import MainLayout from '../layouts/MainLayout.astro'
+import CardRed from '../components/cards/Card-red.astro'
+import CardBlue from '../components/cards/Card-blue.astro'
+import CardGreen from '../components/cards/Card-green.astro'
+import CardYellow from '../components/cards/Card-yellow.astro'
+import CardPink from '../components/cards/Card-pink.astro'
+---
+
+<MainLayout title="Home">
+  <div class="flex flex-col m-8">
+    <h1 class="mb-10 text-4xl self-center">Overview</h1>
+    <select
+      name="sort"
+      id="sort"
+      class="w-fit mb-4 bg-neutral-600 p-4 pr-4 shadow-md rounded-md hover:bg-neutral-500"
+    >
+      <option selected="selected" value="all">All</option>
+      <option value="sedan">Sedan</option>
+      <option value="coupe">Coupe</option>
+    </select>
+    <div class="grid grid-cols-3 gap-10">
+      <div class="sedan"><CardRed /></div>
+      <div class="sedan"><CardBlue /></div>
+      <div class="sedan"><CardGreen /></div>
+      <div class="sedan"><CardYellow /></div>
+      <div class="sedan"><CardPink /></div>
+      <div class="coupe">coupe</div>
+    </div>
+  </div>
+</MainLayout>
+
+<script lang="js">
+  var e = document.getElementById('sort')
+  var sedans = document.querySelectorAll('.sedan')
+  console.log('sedans', sedans)
+  var coupe = document.querySelector('.coupe')
+  function onChange() {
+    var value = e.value
+    var text = e.options[e.selectedIndex].text
+    // console.log(value, text)
+    if (value == 'all') {
+      console.log('all selected')
+      for (const sedan of sedans) {
+        sedan.classList.remove('hidden')
+        sedan.classList.add('block')
+      }
+      coupe.classList.remove('hidden')
+      coupe.classList.add('block')
+    } else if (value == 'sedan') {
+      console.log('sedan selected')
+      for (const sedan of sedans) {
+        sedan.classList.remove('hidden')
+        sedan.classList.add('block')
+      }
+      coupe.classList.remove('block')
+      coupe.classList.add('hidden')
+    } else if (value == 'coupe') {
+      console.log('coupe selected')
+      for (const sedan of sedans) {
+        sedan.classList.remove('block')
+        sedan.classList.add('hidden')
+      }
+      coupe.classList.remove('hidden')
+      coupe.classList.add('block')
+    }
+  }
+  e.onchange = onChange
+  onChange()
+</script>
