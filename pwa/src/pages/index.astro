@@ -11,7 +11,8 @@ import CardRacecar from '../components/cards/Card-racecar.astro'
 
 <MainLayout title="Home">
   <div class="flex flex-col m-8">
-    <h1 class="mb-10 text-4xl self-center">Overview</h1>
+    <h1 class="mb-8 text-4xl self-center font-bold font-title">Laura's car showcase</h1>
+    <h2 class="mb-2 text-2xl self-center">Overview</h2>
     <select
       name="sort"
       id="sort"
@@ -22,7 +23,7 @@ import CardRacecar from '../components/cards/Card-racecar.astro'
       <option value="coupe">Coupe</option>
       <option value="racecar">Racecar</option>
     </select>
-    <div class="grid grid-cols-3 gap-10">
+    <div class="grid grid-cols-3 gap-9">
       <div class="sedan"><CardRed /></div>
       <div class="sedan"><CardBlue /></div>
       <div class="sedan"><CardGreen /></div>
